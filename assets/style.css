@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5rem 5%; /* 上下の余白を倍へ */
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 0.25em;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+/* Layout */
+.page-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    height: 80svh;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Headers */
+h2 {
+    font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #333333;
+    letter-spacing: 0.25em;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    text-align: center;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+/* Content */
+.content-section {
+    width: 100%;
+    padding: 3rem 5% 6rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-body {
+    font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 2.4;
+    color: #333333;
+    text-align: center;
+    letter-spacing: 0.08em;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+    display: block;
+    max-width: 100%;
+}
+
+/* Process Section */
+.process-wrapper {
+    width: 100%;
+    max-width: 860px;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.process-list {
+    width: 90%; /* About(section-body)の視覚的な左右余白（scaleX 0.9による5%の余白）と完璧に揃える */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.process-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.5rem;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+}
+
+.process-image {
+    width: 130px;
+    flex-shrink: 0;
+}
+
+.process-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    min-height: 130px;
+}
+
+.process-text {
+    flex: 1;
+}
+
+.process-title {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.2rem; /* Title Q count increased slightly */
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+}
+
+.process-title-text {
+    display: inline-block;
+    transform: scaleX(0.9);
+    transform-origin: left center;
+}
+
+.process-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #dce46b;
+    border: 2px solid #333333;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 0;
+}
+
+.process-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333333;
+    letter-spacing: 0.05em;
+    text-align: left;
+    transform: scaleX(0.9);
+    transform-origin: left top;
+    width: 111.11%; /* 0.9倍に縮小した際に親要素の横幅にぴったり合うように逆算拡張 */
+}
+
+/* Engagements Section */
+.engagements-section {
+    width: 100%;
+    padding: 0 5% 6rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.engagements-desc {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    text-align: center;
+    letter-spacing: 0.1em;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+.btn-wrap {
+    margin-top: 3rem;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+.brand-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    padding: 0 2rem;
+    height: 48px;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 40px;
+    transition: background-color 0.3s ease;
+    
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333333;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    gap: 0.8rem;
+}
+
+.brand-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.notion-btn-logo {
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+    transform: scaleX(1.1111); /* 親の 0.9 倍を打ち消す */
+}
+
+.note-btn-logo {
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+    transform: scaleX(1.1111); /* 親の 0.9 倍を打ち消す */
+}
+
+/* Insights Section */
+.insights-section {
+    width: 100%;
+    padding: 0 5% 6rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insights-list {
+    list-style: none;
+    width: 100%;
+    max-width: 720px;  /* 前段のテキスト幅と合わせるための調整 */
+    transform: scaleX(0.9); /* 前段テキストと同じ収縮率を適用して視覚的な横幅を揃える */
+    transform-origin: center top;
+}
+
+.insights-item {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.insights-item:first-child {
+    border-top: 1px solid #f2f2f2;
+}
+
+.insights-link {
+    display: flex;
+    align-items: baseline;
+    padding: 1.1rem 0; /* 余白を少し縮める */
+    text-decoration: none;
+    color: #333333;
+    transition: opacity 0.3s ease;
+}
+
+.insights-link:hover {
+    opacity: 0.6;
+}
+
+.insights-date {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: #888888;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.insights-title {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+}
+
+/* Company Section */
+.company-section {
+    width: 100%;
+    padding: 0 5% 6rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company-list {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.25rem 1rem;
+}
+
+.company-list dt {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333333;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+}
+
+.company-list dd {
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #333333;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+.company-rep {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.rep-sns-link {
+    display: inline-flex;
+    align-items: center;
+    color: #333333;
+    transition: opacity 0.3s ease;
+    transform: scaleX(1.1111); /* 親の 0.9 倍を打ち消す */
+    transform-origin: center center;
+}
+
+.rep-sns-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.rep-sns-link:hover {
+    opacity: 0.6;
+}
+
+/* Contact Section */
+.contact-section {
+    width: 100%;
+    padding: 0 5% 6rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-desc {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    text-align: center;
+    letter-spacing: 0.1em;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+.contact-email {
+    color: #333333;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.contact-email:hover {
+    opacity: 0.6;
+}
+
+/* SNS Section */
+.sns-section {
+    width: 100%;
+    padding: 0 5% 6rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.sns-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.sns-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sns-link svg {
+    width: 26px;
+    height: 26px;
+}
+
+.sns-link img {
+    height: 24px;
+    width: auto;
+}
+
+.sns-link:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+    width: 100%;
+    padding: 4rem 5% 2.5rem;
+    text-align: center;
+    background-color: #ffffff;
+    color: #555555;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+    border-top: 1px solid #f2f2f2;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 850px) {
+    /* 横幅が850pxを下回り、意図せぬ改行が発生しうる段階で強制的に左寄せ＆自然改行に切り替え */
+    .pc-only {
+        display: none;
+    }
+    .section-body {
+        text-align: left;
+    }
+}
+
+@media (min-width: 769px) {
+    .scroll-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-image {
+        max-width: 100%;
+        max-height: 75%;
+        margin-top: 5vh;
+        object-fit: contain;
+        z-index: 2;
+    }
+    .section-body {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 3.6rem 5%; /* スマホ版も倍へ */
+    }
+
+
+    .scroll-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: none;
+        touch-action: pan-x pan-y;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .image-wrapper {
+        height: 100%;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-image {
+        height: 75vh;
+        height: 75svh;
+        margin-top: 5vh;
+        width: auto;
+        max-width: none;
+        display: block;
+    }
+
+    .content-section {
+        padding: 4rem 1rem;
+    }
+
+    .section-body {
+        font-size: 1.03rem;
+        line-height: 2.2;
+        text-align: left;
+    }
+
+    .process-wrapper {
+        margin-top: 4rem;
+    }
+
+    .process-list {
+        gap: 4rem;
+    }
+    
+    .process-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+    
+    .process-image {
+        width: 100px;
+        align-self: center;
+        order: 2; /* アイコンをテキストの後に配置 */
+    }
+
+    .process-text {
+        order: 1; /* テキストをアイコンの前に配置 */
+    }
+    
+    .process-title {
+        font-size: 1.15rem; /* スマホ版も少し大きめに調整 */
+        margin-bottom: 1rem;
+        justify-content: flex-start;
+    }
+    
+    .process-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .process-desc {
+        font-size: 0.95rem;
+    }
+
+    .engagements-section {
+        padding: 0 1rem 4rem;
+    }
+
+    .engagements-desc {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .btn-wrap {
+        margin-top: 2rem;
+    }
+
+    .brand-btn {
+        min-width: 180px;
+        height: 44px;
+        font-size: 0.9rem;
+        padding: 0 1.5rem;
+    }
+
+    .notion-btn-logo {
+        height: 16px;
+    }
+
+    .note-btn-logo {
+        height: 16px;
+    }
+
+    .insights-section {
+        padding: 0 1rem 4rem;
+    }
+    
+    .insights-link {
+        flex-direction: column;
+        padding: 0.9rem 0; /* スマホ時の余白も縮める */
+    }
+    
+    .insights-date {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .insights-title {
+        font-size: 0.95rem;
+    }
+
+    .company-section {
+        padding: 0 1rem 4rem;
+    }
+
+    .company-list {
+        grid-template-columns: 100px 1fr;
+        gap: 1rem 0.5rem;
+    }
+
+    .company-list dt, 
+    .company-list dd {
+        font-size: 0.95rem;
+    }
+
+    .contact-section {
+        padding: 0 1rem 4rem;
+    }
+
+    .sns-section {
+        padding: 0 1rem 4rem;
+    }
+
+    .sns-links {
+        gap: 2rem;
+    }
+
+    .sns-link svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .sns-link img {
+        height: 22px;
+    }
+
+    .contact-desc {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .site-footer {
+        padding: 3rem 5% 2rem;
+    }
+}
+
