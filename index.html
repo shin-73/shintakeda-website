@@ -123,8 +123,6 @@
             </div>
         </section>
 
-        </section>
-
         <section class="company-section">
             <h2>Company</h2>
             <h3>会社概要</h3>
@@ -269,17 +267,56 @@
 
                                 const li = document.createElement('li');
                                 li.className = 'insights-item';
-                                li.innerHTML = `
-                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="insights-link">
-                                    <span class="insights-date">${dateStr}</span>
-                                    <span class="insights-title">${item.title}</span>
-                                </a>
-                            `;
-                                insightsList.appendChild(li);
-                            });
+
+                                const a = document.createElement('a');
+                                a.className = 'insights-link';
+                                a.target = '_blank';
+                                a.rel = 'noopener noreferrer';
+
+                                try {
+                                    const url = new URL(item.link);
+                                    if (url.protocol === 'http:' || url.protocol === 'https:') {
+                                        a.href = url.href;
+                                    } else {
+                                        a.href = 'https://note.com/shintakedallc';
+                                    }
+                                } catch {
+                                    a.href = 'https://note.com/shintakedallc';
+                                }
+
+                                const dateSpan = document.createElement('span');
+                                dateSpan.className = 'insights-date';
+                                dateSpan.textContent = dateStr;
+
+                                const titleSpan = document.createElement('span');
+                                titleSpan.className = 'insights-title';
+                                titleSpan.textContent = item.title || 'タイトルなし';
+
+                                a.appendChild(dateSpan);
+                                a.appendChild(titleSpan);
+                                li.appendChild(a);
+                                insightsList.appendChild(li);                            });
                         }
                     })
-                    .catch(err => console.error('Error fetching Insights RSS:', err));
+                    .catch(err => {
+                        console.error('Error fetching Insights RSS:', err);
+
+                        const insightsList = document.getElementById('insightsList');
+                        insightsList.replaceChildren();
+
+                        const li = document.createElement('li');
+                        li.className = 'insights-item';
+
+                        const a = document.createElement('a');
+                        a.className = 'insights-link';
+                        a.href = 'https://note.com/shintakedallc';
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.textContent = '記事の取得に失敗しました。note一覧をご覧ください。';
+
+                        li.appendChild(a);
+                        insightsList.appendChild(li);
+                    });
             });
         </script>
 </body>
