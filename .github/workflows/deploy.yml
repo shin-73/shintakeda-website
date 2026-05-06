@@ -1,4 +1,4 @@
-name: SFTP Deploy
+name: Deploy
 
 on:
   push:
@@ -18,21 +18,11 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
 
-      - name: SSH接続テスト
+      - name: rsyncでデプロイ（追加・更新・削除を同期）
         run: |
-          ssh -i ~/.ssh/deploy_key \
-            -o StrictHostKeyChecking=no \
-            -o ConnectTimeout=15 \
-            -o BatchMode=yes \
-            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }} \
-            "echo 'SSH接続成功'" 2>&1
-
-      - name: ファイルをSCPでデプロイ
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "index.html,assets/"
-          target: ${{ secrets.FTP_SERVER_DIR }}
-          strip_components: 0
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o BatchMode=yes" \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='README.md' \
+            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }}:${{ secrets.FTP_SERVER_DIR }}
