@@ -19,6 +19,9 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H ${{ secrets.FTP_HOST }} >> ~/.ssh/known_hosts
 
+      - name: lftp をインストール
+        run: sudo apt-get install -y lftp
+
       - name: SFTPでさくらサーバーにデプロイ
         run: |
           lftp -e "
