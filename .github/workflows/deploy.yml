@@ -17,20 +17,23 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H ${{ secrets.FTP_HOST }} >> ~/.ssh/known_hosts
 
       - name: lftp をインストール
         run: sudo apt-get install -y lftp
 
       - name: SFTPでさくらサーバーにデプロイ
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
         run: |
           lftp -e "
-            set sftp:connect-program 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no';
-            open sftp://${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }};
+            set sftp:connect-program 'ssh -i /home/runner/.ssh/deploy_key -o StrictHostKeyChecking=no -o PasswordAuthentication=no -o BatchMode=yes';
+            open sftp://$FTP_USERNAME@$FTP_HOST;
             mirror -R --delete --ignore-time \
               --exclude=^\.git \
               --exclude=^README\.md \
               --exclude=^\.github \
-              . ${{ secrets.FTP_SERVER_DIR }};
+              . $FTP_SERVER_DIR;
             bye
           "
