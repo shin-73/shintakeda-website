@@ -1,4 +1,4 @@
-name: FTP Deploy
+name: SFTP Deploy
 
 on:
   push:
@@ -12,25 +12,22 @@ jobs:
       - name: リポジトリをチェックアウト
         uses: actions/checkout@v4
 
-      - name: lftp をインストール
-        run: sudo apt-get install -y lftp
+      - name: SSH鍵を設定
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H ${{ secrets.FTP_HOST }} >> ~/.ssh/known_hosts
 
-      - name: FTPでさくらサーバーにデプロイ
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+      - name: SFTPでさくらサーバーにデプロイ
         run: |
           lftp -e "
-            set ssl:verify-certificate no;
-            set ftp:passive-mode yes;
-            set ftp:use-feat no;
-            open -u $FTP_USERNAME,$FTP_PASSWORD ftp://$FTP_HOST;
+            set sftp:connect-program 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no';
+            open sftp://${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }};
             mirror -R --delete --ignore-time \
               --exclude=^\.git \
               --exclude=^README\.md \
               --exclude=^\.github \
-              . $FTP_SERVER_DIR;
+              . ${{ secrets.FTP_SERVER_DIR }};
             bye
           "
