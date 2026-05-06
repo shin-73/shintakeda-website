@@ -11,6 +11,8 @@ html {
     color: #333333;
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 /* Header */
@@ -160,7 +162,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #333333;
     margin-bottom: 1.2rem;
@@ -169,8 +171,6 @@ h3 {
 
 .process-title-text {
     display: inline-block;
-    transform: scaleX(0.9);
-    transform-origin: left center;
 }
 
 .process-number {
@@ -189,7 +189,7 @@ h3 {
 }
 
 .process-desc {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: #333333;
     letter-spacing: 0.05em;
@@ -212,7 +212,7 @@ h3 {
 
 .engagements-desc {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
     color: #333333;
@@ -352,7 +352,7 @@ h3 {
 
 .company-list dt {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333333;
     letter-spacing: 0.1em;
     line-height: 1.8;
@@ -360,7 +360,7 @@ h3 {
 
 .company-list dd {
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333333;
     letter-spacing: 0.05em;
     line-height: 1.8;
@@ -403,7 +403,7 @@ h3 {
 
 .contact-desc {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
     color: #333333;
@@ -517,6 +517,11 @@ h3 {
         font-size: 1.25rem;
     }
 
+    .process-desc {
+        transform: none;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -595,8 +600,6 @@ h3 {
     }
 
     .process-title {
-        font-size: 1.15rem;
-        /* スマホ版も少し大きめに調整 */
         margin-bottom: 1rem;
         justify-content: flex-start;
     }
@@ -607,16 +610,11 @@ h3 {
         font-size: 1rem;
     }
 
-    .process-desc {
-        font-size: 0.95rem;
-    }
-
     .engagements-section {
         padding: 0 1rem 4rem;
     }
 
     .engagements-desc {
-        font-size: 0.95rem;
         text-align: left;
     }
 
@@ -655,10 +653,6 @@ h3 {
         font-size: 0.8rem;
     }
 
-    .insights-title {
-        font-size: 0.95rem;
-    }
-
     .company-section {
         padding: 0 1rem 4rem;
     }
@@ -666,11 +660,6 @@ h3 {
     .company-list {
         grid-template-columns: 100px 1fr;
         gap: 1rem 0.5rem;
-    }
-
-    .company-list dt,
-    .company-list dd {
-        font-size: 0.95rem;
     }
 
     .contact-section {
@@ -695,7 +684,6 @@ h3 {
     }
 
     .contact-desc {
-        font-size: 0.95rem;
         text-align: left;
     }
 
