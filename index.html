@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="課題を起点に価値を見出し、組織の力へと変えていく“課題駆動型ブランディング”で、企業の未来を共に描きます。">
+    <meta name="description" content="組織が抱える課題を丁寧に紐解き、その奥に隠れた価値を照らし出す“課題駆動型ブランディング”で、企業の未来を共に描きます。">
     <meta name="author" content="合同会社シンタケダ">
     <meta property="og:type" content="website">
     <meta property="og:title" content="合同会社シンタケダ｜SHINTAKEDA">
-    <meta property="og:description" content="課題を起点に価値を見出し、組織の力へと変えていく“課題駆動型ブランディング”で、企業の未来を共に描きます。">
+    <meta property="og:description" content="組織が抱える課題を丁寧に紐解き、その奥に隠れた価値を照らし出す“課題駆動型ブランディング”で、企業の未来を共に描きます。">
     <meta property="og:url" content="https://shintakeda.jp">
     <meta property="og:image" content="https://shintakeda.jp/assets/og_img.png">
 
@@ -30,10 +30,10 @@
     </header>
 
     <div class="page-wrapper">
-        <div class="hero-container">
+        <div class="keyvisual-container">
             <div class="scroll-wrapper" id="scrollWrapper">
                 <div class="image-wrapper">
-                    <img src="assets/hero-image.png" alt="1st view" class="hero-image" id="heroImage">
+                    <img src="assets/key-visual.png" alt="1st view" class="keyvisual-image" id="keyvisualImage">
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
             <h3>私たちについて</h3>
             <p class="section-body">
                 合同会社シンタケダは、企業やサービスのブランディングをお手伝いする会社です。<br>
-                業務の改善や新規事業の開発に取り組みながら、<br class="pc-only">その中で見つけた価値をブランディングへとつなげていく“課題駆動型ブランディング”で、<br
+                ブランディングの取り組みを通じて、組織が抱える課題を丁寧に紐解き、<br class="pc-only">その奥に隠れた価値を照らし出す“課題駆動型ブランディング”で、<br
                     class="pc-only">社会に求められる持続可能な事業をつくり、企業の未来を共に描きます。
             </p>
 
@@ -101,7 +101,7 @@
                 これまでのプロジェクトは、以下よりご覧いただけます。
             </p>
             <div class="btn-wrap">
-                <a href="https://shintakeda.notion.site/case" target="_blank" rel="noopener noreferrer"
+                <a href="https://shintakeda.notion.site/project" target="_blank" rel="noopener noreferrer"
                     class="brand-btn" aria-label="View Engagements">
                     <span>一覧を見る</span>
                     <img src="assets/logo-notion.svg" alt="Notion" class="notion-btn-logo">
@@ -191,134 +191,9 @@
         <footer class="site-footer">
             &copy; SHINTAKEDA LLC.
         </footer>
+    </div>
 
-        <script>
-            window.addEventListener('load', () => {
-
-                if (window.innerWidth <= 768) {
-                    const img = document.getElementById('heroImage');
-                    const wrapper = document.getElementById('scrollWrapper');
-                    const container = document.querySelector('.hero-container');
-                    let lastWidth = window.innerWidth;
-
-                    function lockHeights() {
-                        const vh = window.innerHeight * 0.01;
-                        container.style.height = (vh * 80) + 'px';
-                        img.style.height = (vh * 75) + 'px';
-                        img.style.marginTop = (vh * 5) + 'px';
-                    }
-
-                    function adjustCropAndScroll() {
-                        lockHeights();
-
-                        img.style.marginLeft = '0px';
-                        img.style.marginRight = '0px';
-                        void img.offsetWidth;
-
-                        const originalW = img.clientWidth;
-                        const innerW = window.innerWidth;
-
-                        let rightCrop = (originalW * 0.25) - (innerW / 2);
-                        let leftCrop = rightCrop - (innerW * 0.10);
-
-                        if (rightCrop > 0) {
-                            img.style.marginRight = `-${rightCrop}px`;
-                        }
-                        if (leftCrop > 0) {
-                            img.style.marginLeft = `-${leftCrop}px`;
-                        } else {
-                            img.style.marginLeft = '0px';
-                        }
-
-                        wrapper.scrollLeft = wrapper.scrollWidth;
-                    }
-
-                    if (img.complete && img.clientWidth > 0) {
-                        adjustCropAndScroll();
-                    } else {
-                        img.addEventListener('load', adjustCropAndScroll);
-                    }
-
-                    let resizeTimer;
-                    window.addEventListener('resize', () => {
-                        clearTimeout(resizeTimer);
-                        resizeTimer = setTimeout(() => {
-                            if (window.innerWidth !== lastWidth && window.innerWidth <= 768) {
-                                adjustCropAndScroll();
-                                lastWidth = window.innerWidth;
-                            }
-                        }, 100);
-                    });
-                }
-
-                // Fetch Insights RSS Feed
-                fetch('https://api.rss2json.com/v1/api.json?rss_url=https://note.com/shintakedallc/rss')
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.status === 'ok' && data.items) {
-                            const insightsList = document.getElementById('insightsList');
-                            const items = data.items.slice(0, 3);
-                            items.forEach(item => {
-                                const dateObj = new Date(item.pubDate.replace(/-/g, '/')); // Safari対応
-                                const year = dateObj.getFullYear();
-                                const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-                                const day = String(dateObj.getDate()).padStart(2, '0');
-                                const dateStr = `${year}.${month}.${day}`;
-
-                                const li = document.createElement('li');
-                                li.className = 'insights-item';
-
-                                const a = document.createElement('a');
-                                a.className = 'insights-link';
-                                a.target = '_blank';
-                                a.rel = 'noopener noreferrer';
-
-                                try {
-                                    const url = new URL(item.link);
-                                    if (url.protocol === 'http:' || url.protocol === 'https:') {
-                                        a.href = url.href;
-                                    } else {
-                                        a.href = 'https://note.com/shintakedallc';
-                                    }
-                                } catch {
-                                    a.href = 'https://note.com/shintakedallc';
-                                }
-
-                                const dateSpan = document.createElement('span');
-                                dateSpan.className = 'insights-date';
-                                dateSpan.textContent = dateStr;
-
-                                const titleSpan = document.createElement('span');
-                                titleSpan.className = 'insights-title';
-                                titleSpan.textContent = item.title || 'タイトルなし';
-
-                                a.appendChild(dateSpan);
-                                a.appendChild(titleSpan);
-                                li.appendChild(a);
-                                insightsList.appendChild(li);                            });
-                        }
-                    })
-                    .catch(err => {
-                        console.error('Error fetching Insights RSS:', err);
-
-                        const insightsList = document.getElementById('insightsList');
-                        insightsList.replaceChildren();
-
-                        const li = document.createElement('li');
-                        li.className = 'insights-item';
-
-                        const a = document.createElement('a');
-                        a.className = 'insights-link';
-                        a.href = 'https://note.com/shintakedallc';
-                        a.target = '_blank';
-                        a.rel = 'noopener noreferrer';
-                        a.textContent = '記事の取得に失敗しました。note一覧をご覧ください。';
-
-                        li.appendChild(a);
-                        insightsList.appendChild(li);
-                    });
-            });
-        </script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

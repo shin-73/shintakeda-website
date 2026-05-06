@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     background-color: #ffffff;
     color: #333333;
@@ -18,7 +19,8 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 5rem 5%; /* 上下の余白を倍へ */
+    padding: 5rem 5%;
+    /* 上下の余白を倍へ */
     z-index: 100;
     display: flex;
     align-items: center;
@@ -31,6 +33,9 @@ body, html {
     font-weight: 700;
     color: #333333;
     letter-spacing: 0.25em;
+    text-indent: 0.25em;
+    width: 100%;
+    text-align: center;
     transform: scaleX(0.9);
     transform-origin: center top;
 }
@@ -42,7 +47,7 @@ body, html {
     position: relative;
 }
 
-.hero-container {
+.keyvisual-container {
     position: relative;
     width: 100%;
     height: 80vh;
@@ -65,6 +70,8 @@ h2 {
     font-weight: 400;
     color: #333333;
     letter-spacing: 0.25em;
+    text-indent: 0.25em;
+    width: 100%;
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -75,6 +82,8 @@ h3 {
     font-weight: 700;
     color: #333333;
     letter-spacing: 0.1em;
+    text-indent: 0.1em;
+    width: 100%;
     margin-bottom: 2rem;
     text-align: center;
     transform: scaleX(0.9);
@@ -116,7 +125,8 @@ h3 {
 }
 
 .process-list {
-    width: 90%; /* About(section-body)の視覚的な左右余白（scaleX 0.9による5%の余白）と完璧に揃える */
+    width: 90%;
+    /* About(section-body)の視覚的な左右余白（scaleX 0.9による5%の余白）と完璧に揃える */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -150,7 +160,8 @@ h3 {
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    font-size: 1.2rem; /* Title Q count increased slightly */
+    font-size: 1.2rem;
+    /* Title Q count increased slightly */
     font-weight: 700;
     color: #333333;
     margin-bottom: 1.2rem;
@@ -186,7 +197,8 @@ h3 {
     text-align: left;
     transform: scaleX(0.9);
     transform-origin: left top;
-    width: 111.11%; /* 0.9倍に縮小した際に親要素の横幅にぴったり合うように逆算拡張 */
+    width: 111.11%;
+    /* 0.9倍に縮小した際に親要素の横幅にぴったり合うように逆算拡張 */
 }
 
 /* Engagements Section */
@@ -228,7 +240,7 @@ h3 {
     border: 1px solid #333333;
     border-radius: 40px;
     transition: background-color 0.3s ease;
-    
+
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
@@ -246,14 +258,16 @@ h3 {
     height: 18px;
     width: auto;
     object-fit: contain;
-    transform: scaleX(1.1111); /* 親の 0.9 倍を打ち消す */
+    transform: scaleX(1.1111);
+    /* 親の 0.9 倍を打ち消す */
 }
 
 .note-btn-logo {
     height: 18px;
     width: auto;
     object-fit: contain;
-    transform: scaleX(1.1111); /* 親の 0.9 倍を打ち消す */
+    transform: scaleX(1.1111);
+    /* 親の 0.9 倍を打ち消す */
 }
 
 /* Insights Section */
@@ -269,8 +283,10 @@ h3 {
 .insights-list {
     list-style: none;
     width: 100%;
-    max-width: 720px;  /* 前段のテキスト幅と合わせるための調整 */
-    transform: scaleX(0.9); /* 前段テキストと同じ収縮率を適用して視覚的な横幅を揃える */
+    max-width: 720px;
+    /* 前段のテキスト幅と合わせるための調整 */
+    transform: scaleX(0.9);
+    /* 前段テキストと同じ収縮率を適用して視覚的な横幅を揃える */
     transform-origin: center top;
 }
 
@@ -285,7 +301,8 @@ h3 {
 .insights-link {
     display: flex;
     align-items: baseline;
-    padding: 1.1rem 0; /* 余白を少し縮める */
+    padding: 1.1rem 0;
+    /* 余白を少し縮める */
     text-decoration: none;
     color: #333333;
     transition: opacity 0.3s ease;
@@ -361,7 +378,8 @@ h3 {
     align-items: center;
     color: #333333;
     transition: opacity 0.3s ease;
-    transform: scaleX(1.1111); /* 親の 0.9 倍を打ち消す */
+    transform: scaleX(1.1111);
+    /* 親の 0.9 倍を打ち消す */
     transform-origin: center center;
 }
 
@@ -448,22 +466,25 @@ h3 {
 /* Footer */
 .site-footer {
     width: 100%;
-    padding: 4rem 5% 2.5rem;
+    padding: 3rem 5%;
     text-align: center;
     background-color: #ffffff;
     color: #555555;
     font-size: 0.75rem;
     letter-spacing: 0.12em;
+    text-indent: 0.12em;
     font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
     border-top: 1px solid #f2f2f2;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 850px) {
+
     /* 横幅が850pxを下回り、意図せぬ改行が発生しうる段階で強制的に左寄せ＆自然改行に切り替え */
     .pc-only {
         display: none;
     }
+
     .section-body {
         text-align: left;
     }
@@ -475,6 +496,7 @@ h3 {
         justify-content: center;
         align-items: center;
     }
+
     .image-wrapper {
         position: relative;
         width: 100%;
@@ -483,13 +505,15 @@ h3 {
         justify-content: center;
         align-items: center;
     }
-    .hero-image {
+
+    .keyvisual-image {
         max-width: 100%;
         max-height: 75%;
         margin-top: 5vh;
         object-fit: contain;
         z-index: 2;
     }
+
     .section-body {
         font-size: 1.25rem;
     }
@@ -498,7 +522,8 @@ h3 {
 
 @media (max-width: 768px) {
     .site-header {
-        padding: 3.6rem 5%; /* スマホ版も倍へ */
+        padding: 3.6rem 5%;
+        /* スマホ版も倍へ */
     }
 
 
@@ -525,7 +550,7 @@ h3 {
         overflow: hidden;
     }
 
-    .hero-image {
+    .keyvisual-image {
         height: 75vh;
         height: 75svh;
         margin-top: 5vh;
@@ -551,29 +576,32 @@ h3 {
     .process-list {
         gap: 4rem;
     }
-    
+
     .process-item {
         flex-direction: column;
         align-items: stretch;
         gap: 2rem;
     }
-    
+
     .process-image {
         width: 100px;
         align-self: center;
-        order: 2; /* アイコンをテキストの後に配置 */
+        order: 2;
+        /* アイコンをテキストの後に配置 */
     }
 
     .process-text {
-        order: 1; /* テキストをアイコンの前に配置 */
+        order: 1;
+        /* テキストをアイコンの前に配置 */
     }
-    
+
     .process-title {
-        font-size: 1.15rem; /* スマホ版も少し大きめに調整 */
+        font-size: 1.15rem;
+        /* スマホ版も少し大きめに調整 */
         margin-bottom: 1rem;
         justify-content: flex-start;
     }
-    
+
     .process-number {
         width: 36px;
         height: 36px;
@@ -615,18 +643,19 @@ h3 {
     .insights-section {
         padding: 0 1rem 4rem;
     }
-    
+
     .insights-link {
         flex-direction: column;
-        padding: 0.9rem 0; /* スマホ時の余白も縮める */
+        padding: 0.9rem 0;
+        /* スマホ時の余白も縮める */
     }
-    
+
     .insights-date {
         margin-right: 0;
         margin-bottom: 0.5rem;
         font-size: 0.8rem;
     }
-    
+
     .insights-title {
         font-size: 0.95rem;
     }
@@ -640,7 +669,7 @@ h3 {
         gap: 1rem 0.5rem;
     }
 
-    .company-list dt, 
+    .company-list dt,
     .company-list dd {
         font-size: 0.95rem;
     }
@@ -672,7 +701,6 @@ h3 {
     }
 
     .site-footer {
-        padding: 3rem 5% 2rem;
+        padding: 2.5rem 5%;
     }
 }
-
