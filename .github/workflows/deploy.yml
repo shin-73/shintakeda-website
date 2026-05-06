@@ -18,22 +18,21 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
 
-      - name: lftp をインストール
-        run: sudo apt-get install -y lftp
-
-      - name: SFTPでさくらサーバーにデプロイ
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+      - name: SSH接続テスト
         run: |
-          lftp -e "
-            set sftp:connect-program 'ssh -i /home/runner/.ssh/deploy_key -o StrictHostKeyChecking=no -o PasswordAuthentication=no -o BatchMode=yes';
-            open sftp://$FTP_USERNAME@$FTP_HOST;
-            mirror -R --delete --ignore-time \
-              --exclude=^\.git \
-              --exclude=^README\.md \
-              --exclude=^\.github \
-              . $FTP_SERVER_DIR;
-            bye
-          "
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=no \
+            -o ConnectTimeout=15 \
+            -o BatchMode=yes \
+            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }} \
+            "echo 'SSH接続成功'" 2>&1
+
+      - name: ファイルをSCPでデプロイ
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "index.html,assets/"
+          target: ${{ secrets.FTP_SERVER_DIR }}
+          strip_components: 0
