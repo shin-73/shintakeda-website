@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="祇園ない藤のウェブサイト制作・ムービー・ブランディング支援の取り組みをご紹介します。">
+    <meta name="author" content="合同会社シンタケダ">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="OJOJO NAITO｜合同会社シンタケダ">
+    <meta property="og:description" content="祇園ない藤のウェブサイト制作・ムービー・ブランディング支援の取り組みをご紹介します。">
+    <meta property="og:url" content="https://shintakeda.jp/engagements/ojojo-naito/">
+    <meta property="og:image" content="https://shintakeda.jp/assets/og_img.png">
+    <link rel="canonical" href="https://shintakeda.jp/engagements/ojojo-naito/">
+    <title>OJOJO NAITO｜合同会社シンタケダ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/project-detail.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-logo">
+            <a href="../../index.html">合同会社シンタケダ</a>
+        </div>
+    </header>
+    <nav class="breadcrumb-bar" aria-label="パンくずリスト">
+        <a href="../../index.html">HOME</a>
+        <span class="sep">/</span>
+        <a href="../index.html">取り組み</a>
+        <span class="sep">/</span>
+        <span class="current">OJOJO NAITO</span>
+    </nav>
+
+    <main class="detail-main">
+        <div class="modal-thumb">
+            <img src="https://img07.shop-pro.jp/PA01375/511/etc_base64/b2dw.png?cmsp_timestamp=20250303064924" alt="OJOJO NAITO">
+        </div>
+        <p class="modal-client">祇園ない藤</p>
+        <p class="modal-title">OJOJO NAITO</p>
+        <ul class="modal-tags">
+            <li>ウェブサイト</li>
+            <li>ムービー</li>
+            <li>ブランディング</li>
+            <li>ウェブディレクション</li>
+        </ul>
+        <p class="modal-year">2025</p>
+
+        <div class="modal-body">
+            <div class="modal-body-img-grid">
+                <figure class="modal-body-figure"><img src="../assets/images/ojojo-naito-1.jpg" alt="OJOJO NAITO 1" loading="lazy"></figure>
+                <figure class="modal-body-figure"><img src="../assets/images/ojojo-naito-2.jpg" alt="OJOJO NAITO 2" loading="lazy"></figure>
+                <figure class="modal-body-figure"><img src="../assets/images/ojojo-naito-3.jpg" alt="OJOJO NAITO 3" loading="lazy"></figure>
+                <figure class="modal-body-figure"><img src="../assets/images/ojojo-naito-4.jpg" alt="OJOJO NAITO 4" loading="lazy"></figure>
+                <figure class="modal-body-figure"><img src="../assets/images/ojojo-naito-5.jpg" alt="OJOJO NAITO 5" loading="lazy"></figure>
+            </div>
+            <div class="modal-body-links">
+                <a href="https://youtube.com/playlist?list=PLl3Ne_pz8BEgoE91QB1epRZMi7EeOZXkY" target="_blank" rel="noopener noreferrer" class="modal-body-link">ムービーを見る →</a>
+            </div>
+        </div>
+
+        <div class="sites-section">
+            <span class="modal-section-label">関連サイト</span>
+            <a href="https://ojojo.jp/" target="_blank" rel="noopener noreferrer" class="site-link-card">
+                <div class="site-link-card-body">
+                    <span class="site-link-card-title">ウェブサイトを見る</span>
+                    <span class="site-link-card-domain">ojojo.jp</span>
+                </div>
+                <span class="site-link-card-icon">↗</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="detail-footer">
+        &copy; SHINTAKEDA LLC.
+    </footer>
+    <script>
+        document.querySelectorAll('.modal-tags li').forEach(li => {
+            const cat = li.textContent.trim();
+            li.innerHTML = '<a href="../index.html?category=' + encodeURIComponent(cat) + '">#' + cat + '</a>';
+        });
+    </script>
+</body>
+</html>

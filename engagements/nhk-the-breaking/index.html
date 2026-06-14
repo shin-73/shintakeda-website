@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="日本放送協会「THE BREAKING」のウェブサイト制作・ウェブディレクションの取り組みをご紹介します。">
+    <meta name="author" content="合同会社シンタケダ">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="THE BREAKING｜合同会社シンタケダ">
+    <meta property="og:description" content="日本放送協会「THE BREAKING」のウェブサイト制作・ウェブディレクションの取り組みをご紹介します。">
+    <meta property="og:url" content="https://shintakeda.jp/engagements/nhk-the-breaking/">
+    <meta property="og:image" content="https://shintakeda.jp/assets/og_img.png">
+    <link rel="canonical" href="https://shintakeda.jp/engagements/nhk-the-breaking/">
+    <title>THE BREAKING｜合同会社シンタケダ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/project-detail.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-logo">
+            <a href="../../index.html">合同会社シンタケダ</a>
+        </div>
+    </header>
+    <nav class="breadcrumb-bar" aria-label="パンくずリスト">
+        <a href="../../index.html">HOME</a>
+        <span class="sep">/</span>
+        <a href="../index.html">取り組み</a>
+        <span class="sep">/</span>
+        <span class="current">THE BREAKING</span>
+    </nav>
+
+    <main class="detail-main">
+        <div class="modal-thumb">
+            <img src="../assets/images/the-breaking.jpg" alt="THE BREAKING">
+        </div>
+        <p class="modal-client">日本放送協会</p>
+        <p class="modal-title">THE BREAKING</p>
+        <ul class="modal-tags">
+            <li>ウェブサイト</li>
+            <li>ウェブディレクション</li>
+        </ul>
+        <p class="modal-year">2023</p>
+
+        <div class="modal-body">
+            <div class="modal-body-img-grid">
+                <figure class="modal-body-figure"><img src="../assets/images/the-breaking-ss-1.jpg" alt="THE BREAKING 1" loading="lazy"></figure>
+                <figure class="modal-body-figure"><img src="../assets/images/the-breaking-ss-2.jpg" alt="THE BREAKING 2" loading="lazy"></figure>
+                <figure class="modal-body-figure"><img src="../assets/images/the-breaking-ss-3.jpg" alt="THE BREAKING 3" loading="lazy"></figure>
+            </div>
+        </div>
+    </main>
+
+    <footer class="detail-footer">
+        &copy; SHINTAKEDA LLC.
+    </footer>
+    <script>
+        document.querySelectorAll('.modal-tags li').forEach(li => {
+            const cat = li.textContent.trim();
+            li.innerHTML = '<a href="../index.html?category=' + encodeURIComponent(cat) + '">#' + cat + '</a>';
+        });
+    </script>
+</body>
+</html>
