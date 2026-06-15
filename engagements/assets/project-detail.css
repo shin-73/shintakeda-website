@@ -364,10 +364,11 @@
     padding: 3rem 5%;
     text-align: center;
     border-top: 1px solid #e8e8e8;
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
     font-size: 0.75rem;
-    color: #888888;
-    letter-spacing: 0.1em;
+    color: #555555;
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
 }
 
 /* ---- Responsive ---- */
