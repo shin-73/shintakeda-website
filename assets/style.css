@@ -490,8 +490,7 @@ h3 {
 
 @media (max-width: 768px) {
     .site-header {
-        padding: 3.6rem 5%;
-        /* スマホ版も倍へ */
+        padding: 1.75rem 5%;
     }
 
 
