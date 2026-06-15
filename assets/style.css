@@ -388,12 +388,6 @@ h3 {
 .contact-email {
     color: #333333;
     font-weight: 700;
-    text-decoration: underline;
-    transition: opacity 0.3s ease;
-}
-
-.contact-email:hover {
-    opacity: 0.6;
 }
 
 /* SNS Section */
