@@ -1,0 +1,43 @@
+/* ============================================================
+   common.css — 全ページ共通スタイル
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    padding-inline-start: 0;
+}
+
+body,
+html {
+    width: 100%;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.header-logo {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 0.25em;
+    text-indent: 0.25em;
+    width: 100%;
+    text-align: center;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+.header-logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
