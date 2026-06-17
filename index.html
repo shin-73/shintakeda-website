@@ -43,7 +43,7 @@
             aspect-ratio: 16 / 9;
             overflow: hidden;
             background: #f2f2f2;
-            margin-bottom: 0.75rem;
+            margin-top: 0.5rem;
             border: 1px solid #eeeeee;
         }
         .eng-card-thumb img {
@@ -83,211 +83,6 @@
             .eng-cards {
                 grid-template-columns: 1fr;
                 margin: 2rem 0 2.5rem;
-            }
-        }
-
-        /* Modal */
-        .project-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.55);
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        .project-modal.is-open {
-            display: block;
-        }
-        .modal-scroll-area {
-            min-height: 100%;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 3rem 1rem 4rem;
-        }
-        .modal-inner {
-            background: #ffffff;
-            width: 100%;
-            max-width: 780px;
-            padding: 3rem;
-            position: relative;
-        }
-        .modal-close {
-            position: absolute;
-            top: 1.25rem;
-            right: 1.25rem;
-            background: none;
-            border: none;
-            font-size: 1.6rem;
-            cursor: pointer;
-            color: #333333;
-            line-height: 1;
-            padding: 0.25rem 0.5rem;
-            font-weight: 300;
-        }
-        .modal-thumb {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            background: #f2f2f2;
-            margin-bottom: 2rem;
-        }
-        .modal-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .modal-client {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 0.8rem;
-            color: #888888;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-        }
-        .modal-title {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.25rem;
-            line-height: 1.4;
-        }
-        .modal-tags {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1.5rem;
-        }
-        .modal-tags li {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 0.8rem;
-            border: 1px solid #cccccc;
-            padding: 0.25rem 0.75rem;
-            letter-spacing: 0.05em;
-            color: #555555;
-        }
-        .modal-year {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 0.75rem;
-            color: #888888;
-            letter-spacing: 0.12em;
-            margin-bottom: 2rem;
-        }
-        .modal-url-wrap {
-            text-align: left;
-        }
-        .modal-url {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 200px;
-            padding: 0 2rem;
-            height: 48px;
-            background-color: #ffffff;
-            border: 1px solid #333333;
-            border-radius: 40px;
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #333333;
-            text-decoration: none;
-            letter-spacing: 0.1em;
-            transition: background-color 0.3s ease;
-        }
-        .modal-url:hover {
-            background-color: #f4f4f4;
-        }
-        .modal-body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 0.95rem;
-            line-height: 2;
-            letter-spacing: 0.05em;
-            color: #333333;
-            margin-bottom: 2.5rem;
-            border-top: 1px solid #e8e8e8;
-            padding-top: 2rem;
-        }
-        .modal-body p + p {
-            margin-top: 1em;
-        }
-        .modal-section-label {
-            display: block;
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 0.25em;
-            color: #888888;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-        }
-        .modal-section-label:first-child {
-            margin-top: 0;
-        }
-        .modal-event-heading {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #333333;
-            letter-spacing: 0.05em;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #e8e8e8;
-        }
-        .modal-body-figure {
-            margin: 1rem 0 0;
-        }
-        .modal-body-figure img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-        .modal-body-figure figcaption {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
-            font-size: 0.72rem;
-            color: #888888;
-            margin-top: 0.4rem;
-            letter-spacing: 0.05em;
-        }
-        .modal-body-img-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-            margin: 1rem 0 0;
-        }
-        .modal-body-img-grid .modal-body-figure {
-            margin: 0;
-        }
-        .modal-body-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        .modal-body-link {
-            display: inline-block;
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
-            font-size: 0.8rem;
-            color: #333333;
-            text-decoration: underline;
-            letter-spacing: 0.05em;
-        }
-        .modal-body-link:hover {
-            color: #888888;
-        }
-        @media (max-width: 600px) {
-            .modal-scroll-area {
-                padding: 1rem 0 3rem;
-            }
-            .modal-inner {
-                padding: 2rem 1.25rem;
-            }
-            .modal-title {
-                font-size: 1.15rem;
             }
         }
     </style>
@@ -369,25 +164,25 @@
 
             <div class="eng-cards">
                 <a class="eng-card" href="engagements/art-design-lab/index.html">
+                    <p class="eng-card-client">アートデザインラボ（babytoi）</p>
+                    <p class="eng-card-title">アートデザインラボ</p>
                     <div class="eng-card-thumb">
                         <img src="https://storage.googleapis.com/production-os-assets/assets/608c5452-127b-43ee-9bad-1beb009ca940" alt="アートデザインラボ" loading="lazy">
                     </div>
-                    <p class="eng-card-title">アートデザインラボ</p>
-                    <p class="eng-card-client">アートデザインラボ（babytoi）</p>
                 </a>
                 <a class="eng-card" href="engagements/kikui-scissors/index.html">
+                    <p class="eng-card-client">有限会社菊井鋏製作所</p>
+                    <p class="eng-card-title">菊井鋏製作所</p>
                     <div class="eng-card-thumb">
                         <img src="engagements/assets/images/kikui-dialogue-report.jpg" alt="菊井鋏製作所" loading="lazy">
                     </div>
-                    <p class="eng-card-title">菊井鋏製作所</p>
-                    <p class="eng-card-client">有限会社菊井鋏製作所</p>
                 </a>
                 <a class="eng-card" href="engagements/takaramoto/index.html">
+                    <p class="eng-card-client">宝本商事株式会社</p>
+                    <p class="eng-card-title">宝本商事</p>
                     <div class="eng-card-thumb">
                         <img src="https://takaramoto.com/wp-content/uploads/2024/02/ogp.jpg" alt="宝本商事" loading="lazy">
                     </div>
-                    <p class="eng-card-title">宝本商事</p>
-                    <p class="eng-card-client">宝本商事株式会社</p>
                 </a>
             </div>
 
@@ -486,196 +281,6 @@
 
     <script src="assets/script.js"></script>
 
-    <!-- Engagements modal -->
-    <div class="project-modal" id="engModal" role="dialog" aria-modal="true" aria-label="プロジェクト詳細">
-        <div class="modal-scroll-area">
-            <div class="modal-inner">
-                <button class="modal-close" id="engModalClose" aria-label="閉じる">×</button>
-                <div id="engModalContent"></div>
-            </div>
-        </div>
-    </div>
-
-    <template id="top-art-design-lab">
-        <div class="modal-thumb"><img src="https://storage.googleapis.com/production-os-assets/assets/608c5452-127b-43ee-9bad-1beb009ca940" alt="アートデザインラボ（babytoi）"></div>
-        <p class="modal-client">アートデザインラボ（babytoi）</p>
-        <p class="modal-title">アートデザインラボ</p>
-        <ul class="modal-tags"><li>ブランディング</li><li>フィロソフィー</li><li>デザイン経営</li></ul>
-        <p class="modal-year">2023〜</p>
-        <div class="modal-body">
-            <span class="modal-section-label">概要</span>
-            <p>アートデザインラボは「すべての子どもたちの好奇心と表現を守る」をミッションに、2018年に世田谷区でスタートしました。好奇心とそこから生まれる表現は、人の大切な"根っこ"と考え、そのために「どんな子どもの好奇心も枯れさせない」というビジョンのもと活動しています。VUCA時代に求められるスキル（課題発見力、仮説構築力、共創力）を、自意識の芽生える４歳から育むことができるよう「頭の中を、おどろかそう！」をコンセプトに、問いを育てるメソッドで子どもたちをサポートしています。</p>
-            <p>シンタケダは、「生徒数を増やしたい」という当初のご相談に対し、教育の"質"こそが最大の強みであると再定義。スクールの魅力や特徴を言語化し、企業向けや地域向けイベント等での活動を通じて「質の高さ」をブランド資産へと転換する伴走支援を行っています。</p>
-            <p>2024年にはキッズデザイン賞「キッズデザイン協議会会長賞」を受賞し、教育の質が客観的に証明されました。現在は自治体や企業との連携案件も増加しており、スクールの枠を超えて活動のフィールドが大きく広がっています。</p>
-
-            <span class="modal-section-label">取り組み</span>
-
-            <h3 class="modal-event-heading">100素材×100ひらめき コドモデパート</h3>
-            <p>子どもたちが"店長"となって運営する、期間限定の工作デパート。100種類以上の素材から自由に「ひらめき」を形にする「クリエイティブがつなぐ共創体験」を、地元世田谷区のHOME/WORK VILLAGEで開催しました。</p>
-            <div class="modal-body-img-grid">
-                <figure class="modal-body-figure">
-                    <img src="engagements/assets/images/adl-kodomodept-1.webp" alt="100素材×100ひらめき コドモデパート" loading="lazy">
-                    <figcaption>100素材×100ひらめき コドモデパート（2026年2月7日-8日開催）</figcaption>
-                </figure>
-                <figure class="modal-body-figure">
-                    <img src="engagements/assets/images/adl-kodomodept-2.png" alt="100素材×100ひらめき コドモデパート" loading="lazy">
-                    <figcaption>100素材×100ひらめき コドモデパート（2026年2月7日-8日開催）</figcaption>
-                </figure>
-            </div>
-            <div class="modal-body-links">
-                <a href="https://www.youtube.com/watch?v=xR8bLU3Asyc" target="_blank" rel="noopener noreferrer" class="modal-body-link">動画を見る（YouTube） →</a>
-                <a href="https://artdesignlab.jp/kodomodept" target="_blank" rel="noopener noreferrer" class="modal-body-link">詳細を見る →</a>
-            </div>
-
-            <h3 class="modal-event-heading">コドモデパート in 富山の海</h3>
-            <p>地域独自の素材を活用し、その土地ならではのひらめきを引き出す地方展開モデルとして、コドモデパートを富山県海老江海岸で開催しました。富山の豊かな自然環境を背景に、子どもたちの表現が地域コミュニティを活性化する場をデザインしました。</p>
-            <div class="modal-body-img-grid">
-                <figure class="modal-body-figure">
-                    <img src="engagements/assets/images/adl-toyama-1.jpg" alt="コドモデパート in 富山の海" loading="lazy">
-                    <figcaption>コドモデパート in 富山の海（2025年7月27日開催）</figcaption>
-                </figure>
-                <figure class="modal-body-figure">
-                    <img src="engagements/assets/images/adl-toyama-2.jpg" alt="コドモデパート in 富山の海" loading="lazy">
-                    <figcaption>コドモデパート in 富山の海（2025年7月27日開催）</figcaption>
-                </figure>
-            </div>
-
-            <h3 class="modal-event-heading">いこーよフェスタ2025</h3>
-            <p>大型イベントを舞台に、子どもたちが記者となって取材・発信するプログラム。「体験し、話を聞き、言葉にする」というプロセスを通じて、子どもたちの主体性を育むユーザー体験を設計しています。</p>
-            <figure class="modal-body-figure">
-                <img src="engagements/assets/images/adl-ikouyo-1.jpg" alt="いこーよフェスタ2025" loading="lazy">
-                <figcaption>いこーよフェスタ2025（2025年9月13〜15日開催）</figcaption>
-            </figure>
-
-            <h3 class="modal-event-heading">メーカーフェア東京</h3>
-            <p>地上最大のDIYの展示発表会「Maker Faire（メイカーフェア）」において、子どもたちが記者となって作り手（メイカー）にインタビューを実施。子どもの視点で技術や創作の魅力を再発見し、可視化する試みを行いました。</p>
-            <figure class="modal-body-figure">
-                <img src="engagements/assets/images/adl-makerfaire-1.jpg" alt="メーカーフェア東京" loading="lazy">
-                <figcaption>メーカーフェア東京（2025年10月4日～5日開催）</figcaption>
-            </figure>
-
-            <h3 class="modal-event-heading">「コドモデパートPOPUP!」 in 三茶縁日</h3>
-            <p>地域のお祭りと連携した、機動力のあるポップアップ形式のコドモデパート。日常の延長線上にある賑わいの中で、多くの子どもたちが表現に触れるきっかけとなるタッチポイントを創出しました。</p>
-            <figure class="modal-body-figure">
-                <img src="engagements/assets/images/adl-sancha-1.jpg" alt="コドモデパートPOPUP! in 三茶縁日" loading="lazy">
-                <figcaption>「コドモデパートPOPUP!」 in 三茶縁日（2025年11月29日～30日開催）</figcaption>
-            </figure>
-        </div>
-        <div class="modal-url-wrap"><a href="https://artdesignlab.jp/" target="_blank" rel="noopener noreferrer" class="modal-url">ウェブサイトを見る →</a></div>
-    </template>
-
-    <template id="top-kikui-hasami">
-        <div class="modal-thumb"><img src="engagements/assets/images/kikui-dialogue-report.jpg" alt="菊井鋏製作所"></div>
-        <p class="modal-client">有限会社菊井鋏製作所</p>
-        <p class="modal-title">菊井鋏製作所</p>
-        <ul class="modal-tags"><li>ブランディング</li><li>フィロソフィー</li><li>デザイン経営</li></ul>
-        <p class="modal-year">2023〜</p>
-        <div class="modal-body">
-            <span class="modal-section-label">概要</span>
-            <p>和歌山県に拠点を置く菊井鋏製作所は、1953年の創業以来、多くの理美容師に愛用されるハサミを製造・販売する職人集団です。一丁一丁を丁寧に手作業で仕上げる高い技術力を背景に、作り手としての誠実なものづくりを続けています。</p>
-            <p>シンタケダは、同社のデザイン経営支援を通じて、その中核となる理念「髪を切る職人と、ともに在り続ける」の策定を共に行い、組織としての「人格形成」や「文化醸成」に伴走しています。</p>
-            <p>こうした取り組みを通じて、組織の結束力の強まりや、理念に共感した人材の採用という成果にも繋がっています。さらに現在は、自社の文化を地域へと発信し、業界の枠を超えてその価値を広く伝えていく取り組みを推進しています。</p>
-
-            <span class="modal-section-label">取り組み</span>
-
-            <h3 class="modal-event-heading">DIALOGUE REPORT 2025</h3>
-            <p>「職人総会 2025」での対話の内容や、当日の熱量を一冊に凝縮したレポート冊子。その場限りのイベントに終わらせず、交わされた言葉を組織の資産としてアーカイブ化することで、継続的な文化醸成へと繋げています。</p>
-            <figure class="modal-body-figure">
-                <img src="engagements/assets/images/kikui-dialogue-report.jpg" alt="DIALOGUE REPORT 2025" loading="lazy">
-            </figure>
-            <div class="modal-body-links">
-                <a href="https://www.scissors.co.jp/blog/dr2025/" target="_blank" rel="noopener noreferrer" class="modal-body-link">レポートを読む →</a>
-            </div>
-
-            <h3 class="modal-event-heading">職人総会 2025</h3>
-            <p>全社員が集まり、策定した理念を自分事として捉え、これからの組織のあり方について対話を深めるためのイベントを開催しました。シンタケダは企画・運営のサポートを通じて、職人同士が想いを交わし、文化を体感できる「場」のデザインと全体のファシリテーションを行いました。</p>
-            <div class="modal-body-img-grid">
-                <figure class="modal-body-figure">
-                    <img src="engagements/assets/images/kikui-shokunin-1.jpg" alt="職人総会 2025 第一部" loading="lazy">
-                </figure>
-                <figure class="modal-body-figure">
-                    <img src="engagements/assets/images/kikui-shokunin-2.jpg" alt="職人総会 2025 第二部" loading="lazy">
-                </figure>
-            </div>
-            <div class="modal-body-links">
-                <a href="https://www.scissors.co.jp/blog/dialogue2025/" target="_blank" rel="noopener noreferrer" class="modal-body-link">レポートを読む →</a>
-            </div>
-
-            <h3 class="modal-event-heading">dialogue note 2024</h3>
-            <p>経営理念「髪を切る職人と、ともに在り続ける」を軸に、組織として大切にしたい想いを職人一人ひとりと対話し、そのプロセスと記録をまとめた冊子。単なる理念の伝達ではなく、対話を通じて自分たちの"らしさ"を再発見し、悩んだときに立ち返るためのツールとして制作しました。</p>
-            <figure class="modal-body-figure">
-                <img src="engagements/assets/images/kikui-dialogue-note.jpg" alt="dialogue note 2024" loading="lazy">
-            </figure>
-            <div class="modal-body-links">
-                <a href="https://www.scissors.co.jp/blog/dialogue-note-2024/" target="_blank" rel="noopener noreferrer" class="modal-body-link">レポートを読む →</a>
-            </div>
-        </div>
-        <div class="modal-url-wrap"><a href="https://www.scissors.co.jp/" target="_blank" rel="noopener noreferrer" class="modal-url">ウェブサイトを見る →</a></div>
-    </template>
-
-    <template id="top-takaramoto">
-        <div class="modal-thumb"><img src="https://takaramoto.com/wp-content/uploads/2024/02/ogp.jpg" alt="宝本商事"></div>
-        <p class="modal-client">宝本商事株式会社</p>
-        <p class="modal-title">宝本商事</p>
-        <ul class="modal-tags"><li>ブランディング</li><li>ウェブディレクション</li><li>フィロソフィー</li><li>ウェブサイト</li></ul>
-        <p class="modal-year">2024</p>
-        <div class="modal-body">
-            <span class="modal-section-label">概要</span>
-            <p>1947年創業の宝本商事は、リボンの企画製造卸を中心に、多彩な事業を国内外で展開するグローバルカンパニーです。長年積み重ねてきたリボン事業と、未来を切り拓く新規事業の双方が共存する中で、それぞれのフェーズに合わせた課題整理と価値の再定義が求められていました。</p>
-            <p>シンタケダは、社長自らが海外スタッフを含む全社員の声に耳を傾ける対話のプロセスをサポート。山積する経営課題を一つひとつ紐解きながら、並行して進む新規事業にも関わりました。徹底したヒアリングを通じて、組織が持つ本質的な価値と、進むべき未来の解像度を高める伴走支援を行っています。</p>
-            <p>スタッフとの対話から紡ぎ出された「会社の価値」を社内外へ正しく届けるため、コーポレートサイトの全面リニューアルを実施。ウェブサイト全体の設計はもちろん、コピーライティングもゼロから担当し、伝統と革新が共存する同社のアイデンティティを言葉として定着させることで、組織の「人格」を体現する新たな情報発信の基盤を構築しました。</p>
-
-            <span class="modal-section-label">取り組み</span>
-
-            <h3 class="modal-event-heading">コーポレートサイト</h3>
-            <p>1947年の創業以来培ってきたリボン事業と、未来を見据えた複数の新規事業。その伝統と革新が共存する同社のアイデンティティを再定義するため、ウェブサイトのリニューアルを実施。「リボンが喜びを紡ぐ」というフィロソフィーをはじめ、サイト全編のコピーライティングも担当しました。単なる情報の羅列ではなく、組織の「人格」や「進むべき未来」を社内外へ一貫して伝えるためのコミュニケーション基盤として構築しています。</p>
-            <figure class="modal-body-figure"><img src="engagements/assets/images/takaramoto-1.jpg" alt="宝本商事 コーポレートサイト 1" loading="lazy"></figure>
-            <figure class="modal-body-figure"><img src="engagements/assets/images/takaramoto-2.jpg" alt="宝本商事 コーポレートサイト 2" loading="lazy"></figure>
-            <figure class="modal-body-figure"><img src="engagements/assets/images/takaramoto-3.jpg" alt="宝本商事 コーポレートサイト 3" loading="lazy"></figure>
-            <figure class="modal-body-figure"><img src="engagements/assets/images/takaramoto-4.jpg" alt="宝本商事 コーポレートサイト 4" loading="lazy"></figure>
-        </div>
-        <div class="modal-url-wrap"><a href="https://takaramoto.com/" target="_blank" rel="noopener noreferrer" class="modal-url">ウェブサイトを見る →</a></div>
-    </template>
-
-    <script>
-        (function () {
-            const engModal = document.getElementById('engModal');
-            const engModalContent = document.getElementById('engModalContent');
-
-            function openEngModal(id) {
-                const tpl = document.getElementById(id);
-                if (!tpl) return;
-                engModalContent.innerHTML = '';
-                engModalContent.appendChild(tpl.content.cloneNode(true));
-                engModal.classList.add('is-open');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeEngModal() {
-                engModal.classList.remove('is-open');
-                document.body.style.overflow = '';
-                engModalContent.innerHTML = '';
-            }
-
-            document.querySelectorAll('.eng-card').forEach(function (card) {
-                card.addEventListener('click', function (e) {
-                    if (!card.dataset.id) return;
-                    e.preventDefault();
-                    openEngModal(card.dataset.id);
-                });
-            });
-
-            document.getElementById('engModalClose').addEventListener('click', closeEngModal);
-
-            document.querySelector('#engModal .modal-scroll-area').addEventListener('click', function (e) {
-                if (e.target === e.currentTarget) closeEngModal();
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && engModal.classList.contains('is-open')) closeEngModal();
-            });
-        })();
-    </script>
 </body>
 
 </html>
