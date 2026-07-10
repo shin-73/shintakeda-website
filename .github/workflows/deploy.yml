@@ -1,9 +1,10 @@
 name: Deploy
 
+# 本番（shintakeda.jp）へのデプロイは手動実行のみ。
+# mainへのpushはGitHub Pages（テストプレビュー）だけを更新する。
+# 本番反映するとき: gh workflow run deploy.yml
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
