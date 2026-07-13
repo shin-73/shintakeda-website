@@ -41,3 +41,46 @@ html {
     text-decoration: none;
 }
 
+/* ---- Layout ---- */
+.page-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ---- Header ----
+   トップページはborder-bottomなし、一覧・詳細ページはengagements.cssで
+   border-bottomを追加している（現状の見た目を維持するため） */
+.site-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 5%;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+    width: 100%;
+    padding: 3rem 5%;
+    text-align: center;
+    background-color: #ffffff;
+    color: #555555;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+    border-top: 1px solid #e8e8e8;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1.75rem 5%;
+    }
+
+    .site-footer {
+        padding: 2.5rem 5%;
+    }
+}
+

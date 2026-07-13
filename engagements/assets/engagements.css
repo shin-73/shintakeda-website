@@ -1,0 +1,673 @@
+/* ============================================================
+   engagements.css — 取り組み一覧・詳細ページ 共通スタイル
+   ============================================================ */
+
+/* ---- Header ----
+   基本スタイルは common.css の .site-header で定義済み。
+   一覧・詳細ページだけ下罫線を追加する（トップページにはない） */
+.site-header {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* ---- 長体（scaleX 0.9）ルール
+   サイト全体の表記ルール（日本語は0.9倍に縮小）を、このファイル内で
+   使う箇所だけまとめて定義。個々のセレクタ内では重複させない */
+.project-client,
+.project-title,
+.modal-client,
+.modal-title,
+.modal-body p,
+.modal-section-label,
+.modal-event-heading {
+    transform: scaleX(0.9);
+    transform-origin: left top;
+}
+
+/* ---- Breadcrumb bar (standalone, below header) ---- */
+.breadcrumb-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 5%;
+}
+
+.breadcrumb-bar a {
+    font-size: 0.72rem;
+    color: #777777;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.15s;
+}
+
+.breadcrumb-bar a:hover {
+    color: #333333;
+}
+
+.breadcrumb-bar .sep {
+    font-size: 0.72rem;
+    color: #cccccc;
+    line-height: 1;
+    margin: 0 0.1rem;
+}
+
+.breadcrumb-bar .current {
+    font-size: 0.72rem;
+    color: #999999;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   一覧ページ（engagements/index.html）
+   ============================================================ */
+
+.projects-hero {
+    padding: 4rem 5% 2.5rem;
+    text-align: center;
+}
+
+/* トップページのセクション見出し（index.css の h2/h3）と同じ見た目。
+   素の h2/h3 にはせず .projects-hero 配下に限定し、
+   詳細ページの .modal-event-heading への影響を避ける */
+.projects-hero h2 {
+    font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #333333;
+    letter-spacing: 0.25em;
+    text-indent: 0.25em;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.projects-hero h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 0.1em;
+    text-indent: 0.1em;
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+    transform: scaleX(0.9);
+    transform-origin: center top;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 0 5% 3rem;
+}
+
+.filter-dropdown-wrap {
+    position: relative;
+}
+
+.filter-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.45rem;
+    height: 32px;
+    width: 148px;
+    padding: 0 0.85rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background: #ffffff;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    color: #333333;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.15s;
+}
+
+.filter-trigger[aria-expanded="true"],
+.filter-trigger:hover {
+    border-color: #333333;
+}
+
+.filter-trigger-icon {
+    width: 12px;
+    height: 12px;
+    opacity: 0.45;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.filter-trigger[aria-expanded="true"] .filter-trigger-icon {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 190px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    z-index: 200;
+    padding: 0.35rem 0;
+}
+
+.filter-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+    font-size: 0.83rem;
+    letter-spacing: 0.03em;
+    color: #333333;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.filter-checkbox-item:hover {
+    background: #f5f5f5;
+}
+
+.filter-checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.filter-checkbox-mark {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #cccccc;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.filter-checkbox-item input:checked ~ .filter-checkbox-mark {
+    background: #333333;
+    border-color: #333333;
+}
+
+.filter-checkbox-item input:checked ~ .filter-checkbox-mark::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 4.5px;
+    border-left: 1.5px solid #ffffff;
+    border-bottom: 1.5px solid #ffffff;
+    transform: rotate(-45deg) translateY(-1px);
+}
+
+.filter-dropdown-footer {
+    border-top: 1px solid #eeeeee;
+    padding: 0.35rem 0.5rem 0.2rem;
+    margin-top: 0.35rem;
+}
+
+.filter-clear {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    font-size: 0.78rem;
+    color: #aaaaaa;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.4rem;
+    width: 100%;
+    text-align: left;
+}
+
+.filter-clear:hover {
+    color: #333333;
+}
+
+.projects-section {
+    padding: 0 5% 6rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-card-inner {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+.project-thumb {
+    order: 3;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #f2f2f2;
+    margin-bottom: 0.25rem;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.project-card-inner:hover .project-thumb img {
+    transform: scale(1.04);
+}
+
+.project-info {
+    display: contents;
+}
+
+.project-client {
+    order: 1;
+    font-size: 0.85rem;
+    color: #888888;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.35rem;
+}
+
+.project-title {
+    order: 2;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.project-tags {
+    order: 4;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tags li a {
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.project-tags li a:hover {
+    color: #333333;
+}
+
+.project-thumb--no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-thumb--no-image::after {
+    content: '画像準備中';
+    font-size: 0.72rem;
+    color: #bbbbbb;
+    letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   詳細ページ（engagements/{slug}/index.html）
+   ============================================================ */
+
+.detail-main {
+    width: 100%;
+    max-width: 780px;
+    margin: 3rem auto 6rem;
+    padding: 0 5%;
+}
+
+/* ---- Content styles (reuse modal class names) ---- */
+.modal-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #f2f2f2;
+    margin-bottom: 2rem;
+}
+
+.modal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-client {
+    font-size: 0.8rem;
+    color: #888888;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+}
+
+.modal-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-tags li a {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.modal-tags li a:hover {
+    color: #333333;
+}
+
+.modal-year {
+    font-size: 0.75rem;
+    color: #888888;
+    letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+}
+
+.modal-body {
+    font-size: 0.95rem;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    color: #333333;
+    margin-bottom: 2.5rem;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.modal-body p {
+    width: 111.11%;
+}
+
+.modal-body p + p {
+    margin-top: 1em;
+}
+
+.modal-section-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: #888888;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.modal-section-label:first-child {
+    margin-top: 0;
+}
+
+/* 2つ目以降のセクションラベル（「取り組み」等）の上に罫線を引く */
+.modal-section-label:not(:first-child) {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.modal-event-heading {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333333;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.modal-body-figure {
+    margin: 1rem 0 0;
+}
+
+.modal-body-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.modal-body-figure figcaption {
+    font-size: 0.72rem;
+    color: #888888;
+    margin-top: 0.4rem;
+    letter-spacing: 0.05em;
+}
+
+.modal-body-img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+}
+
+.modal-body-img-grid .modal-body-figure {
+    margin: 0;
+}
+
+.modal-body-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.modal-body-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #333333;
+    text-decoration: underline;
+    letter-spacing: 0.05em;
+}
+
+.modal-body-link:hover {
+    color: #888888;
+}
+
+/* ---- OGP カード（記事リンク） ---- */
+.ogp-card {
+    display: flex;
+    align-items: stretch;
+    min-height: 130px;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333333;
+    background-color: #fafafa;
+    overflow: hidden;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.ogp-card:hover {
+    background-color: #f0f0f0;
+}
+
+.ogp-card-body {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+}
+
+.ogp-card-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: 0.03em;
+    line-height: 1.55;
+}
+
+.ogp-card-desc {
+    font-size: 0.75rem;
+    color: #888888;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ogp-card-url {
+    font-size: 0.7rem;
+    color: #aaaaaa;
+    letter-spacing: 0.03em;
+    margin-top: 0.1rem;
+}
+
+.ogp-card-thumb {
+    width: 120px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.ogp-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---- 関連サイトセクション ---- */
+.sites-section {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 2rem;
+}
+
+/* ---- ウェブサイトリンク（Notion embed 風カード） ---- */
+.site-link-wrap {
+    margin-top: 2.5rem;
+}
+
+.site-link-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.875rem 1.25rem;
+    min-width: 260px;
+    max-width: 400px;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333333;
+    background-color: #fafafa;
+    transition: background-color 0.2s;
+}
+
+.site-link-card:hover {
+    background-color: #f0f0f0;
+}
+
+.site-link-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.site-link-card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: 0.05em;
+}
+
+.site-link-card-domain {
+    font-size: 0.72rem;
+    color: #888888;
+    letter-spacing: 0.05em;
+}
+
+.site-link-card-icon {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    flex-shrink: 0;
+}
+
+/* ---- Footer ---- */
+.detail-footer {
+    width: 100%;
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+    font-size: 0.75rem;
+    color: #555555;
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-hero {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .filter-bar {
+        padding: 0 1rem 2.5rem;
+    }
+
+    .projects-section {
+        padding: 0 1rem 4rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .detail-main {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .site-link-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ogp-card-thumb {
+        width: 90px;
+    }
+}

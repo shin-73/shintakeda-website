@@ -1,19 +1,6 @@
-/* Header */
-.site-header {
-    position: relative;
-    width: 100%;
-    padding: 2.5rem 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Layout */
-.page-wrapper {
-    width: 100%;
-    overflow-x: hidden;
-    position: relative;
-}
+/* ============================================================
+   index.css — トップページ（index.html）専用スタイル
+   ============================================================ */
 
 .keyvisual-container {
     position: relative;
@@ -45,7 +32,6 @@ h2 {
 }
 
 h3 {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     color: #333333;
@@ -54,8 +40,24 @@ h3 {
     width: 100%;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+/* ---- 長体（scaleX 0.9）ルール
+   このページ内で使う箇所をまとめて定義。個々のセレクタ内では重複させない */
+h3,
+.section-body,
+.engagements-desc,
+.btn-wrap,
+.company-list,
+.contact-desc {
     transform: scaleX(0.9);
     transform-origin: center top;
+}
+
+.process-title-text,
+.process-desc {
+    transform: scaleX(0.9);
+    transform-origin: left top;
 }
 
 /* Content */
@@ -77,8 +79,6 @@ h3 {
     color: #333333;
     text-align: center;
     letter-spacing: 0.08em;
-    transform: scaleX(0.9);
-    transform-origin: center top;
     display: block;
     max-width: 100%;
 }
@@ -105,7 +105,6 @@ h3 {
     display: flex;
     align-items: flex-start;
     gap: 3.5rem;
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
 }
 
 .process-image {
@@ -137,8 +136,6 @@ h3 {
 
 .process-title-text {
     display: inline-block;
-    transform: scaleX(0.9);
-    transform-origin: left top;
 }
 
 .process-number {
@@ -162,8 +159,6 @@ h3 {
     color: #333333;
     letter-spacing: 0.05em;
     text-align: left;
-    transform: scaleX(0.9);
-    transform-origin: left top;
     width: 111.11%;
     /* 0.9倍に縮小した際に親要素の横幅にぴったり合うように逆算拡張 */
 }
@@ -183,21 +178,16 @@ h3 {
 }
 
 .engagements-desc {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
     color: #333333;
     text-align: center;
     letter-spacing: 0.1em;
-    transform: scaleX(0.9);
-    transform-origin: center top;
 }
 
 .btn-wrap {
     margin-top: 3rem;
-    transform: scaleX(0.9);
-    transform-origin: center top;
 }
 
 .brand-btn {
@@ -212,7 +202,6 @@ h3 {
     border-radius: 40px;
     transition: background-color 0.3s ease;
 
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
     color: #333333;
@@ -284,7 +273,6 @@ h3 {
 }
 
 .insights-date {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     color: #888888;
@@ -293,7 +281,6 @@ h3 {
 }
 
 .insights-title {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.6;
@@ -314,9 +301,6 @@ h3 {
     width: 100%;
     max-width: 720px;
     margin: 0 auto;
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-    transform: scaleX(0.9);
-    transform-origin: center top;
     display: grid;
     grid-template-columns: 140px 1fr;
     gap: 1.25rem 1rem;
@@ -374,15 +358,12 @@ h3 {
 }
 
 .contact-desc {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
     color: #333333;
     text-align: center;
     letter-spacing: 0.1em;
-    transform: scaleX(0.9);
-    transform-origin: center top;
 }
 
 .contact-email {
@@ -426,20 +407,6 @@ h3 {
 .sns-link:hover {
     opacity: 0.6;
     transform: translateY(-2px);
-}
-
-/* Footer */
-.site-footer {
-    width: 100%;
-    padding: 3rem 5%;
-    text-align: center;
-    background-color: #ffffff;
-    color: #555555;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-indent: 0.12em;
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
-    border-top: 1px solid #e8e8e8;
 }
 
 /* Responsive Adjustments */
@@ -489,11 +456,6 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    .site-header {
-        padding: 1.75rem 5%;
-    }
-
-
     .scroll-wrapper {
         overflow-x: auto;
         overflow-y: hidden;
@@ -649,7 +611,4 @@ h3 {
         text-align: left;
     }
 
-    .site-footer {
-        padding: 2.5rem 5%;
-    }
 }
