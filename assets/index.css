@@ -190,6 +190,76 @@ h3,
     margin-top: 3rem;
 }
 
+/* Engagements card grid */
+.eng-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 0 3rem;
+}
+
+.eng-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.eng-card-thumb {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #f2f2f2;
+    margin-top: 0.5rem;
+    border: 1px solid #eeeeee;
+}
+
+.eng-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.eng-card:hover .eng-card-thumb img {
+    transform: scale(1.03);
+}
+
+.eng-card-title {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #333333;
+    margin-bottom: 0.3rem;
+    transform: scaleX(0.9);
+    transform-origin: left top;
+}
+
+.eng-card-client {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #888888;
+    letter-spacing: 0.1em;
+    transform: scaleX(0.9);
+    transform-origin: left top;
+}
+
+@media (max-width: 900px) {
+    .eng-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .eng-cards {
+        grid-template-columns: 1fr;
+        margin: 2rem 0 2.5rem;
+    }
+}
+
 .brand-btn {
     display: inline-flex;
     align-items: center;
