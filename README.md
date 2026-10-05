@@ -2,4 +2,9 @@
 
 合同会社シンタケダ 公式サイト
 
-GitHub Actions によるFTP自動デプロイ管理。`main` ブランチへのpushで自動的に本番サーバーへ反映されます。
+## 公開の仕組み
+
+- `main` ブランチへのpush：GitHub Pages（テストプレビュー）だけが更新される。本番には反映されない
+  - プレビュー：https://shin-73.github.io/shintakeda-website/
+- 本番（shintakeda.jp）への反映：GitHub Actions の Deploy ワークフローを手動実行したときのみ（rsync over SSH でさくらサーバーへ同期）
+  - 実行コマンド：`gh workflow run deploy.yml`
