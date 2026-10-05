@@ -19,18 +19,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://shintakeda.jp/engagements/fimmigrm/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shintakeda.jp/engagements/hakubaku-zatsu/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://shintakeda.jp/engagements/hogugu/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,12 +27,6 @@
   <url>
     <loc>https://shintakeda.jp/engagements/kikui-scissors/</loc>
     <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shintakeda.jp/engagements/kobe-morrymama/</loc>
-    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -80,18 +62,6 @@
   </url>
   <url>
     <loc>https://shintakeda.jp/engagements/nhk-seiji-magazine/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shintakeda.jp/engagements/nhk-the-breaking/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shintakeda.jp/engagements/ojojo-naito/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,25 +109,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://shintakeda.jp/engagements/toban/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://shintakeda.jp/engagements/tokyo-kogei/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shintakeda.jp/engagements/tsushima-boots/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shintakeda.jp/engagements/wise-corporation/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
